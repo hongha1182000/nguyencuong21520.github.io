@@ -305,7 +305,6 @@ test.innerHTML =  "  <div class='left'>\
   <img src='https://www.now.vn/app/assets/img/nowvn.png?aa6bbddbf923c9dfd35ca83a7d068e6d'>\
 </a>\
 <div class='video'>\
-  <iframe src='https://www.youtube.com/watch?v=FOu8MCbU1iA&t=880s'>\
-  </iframe>\
+<iframe width='560' height='315' src='https://www.youtube.com/embed/-QTNFALG3U0' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>\
 </div>";
 
