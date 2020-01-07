@@ -33,7 +33,10 @@ body{
     text-align: center;
 }
 .aa{
-    font-size: 50px;
+    font-size: 55px;
     color: white;
     font-family:'Lobster' ;
+}
+.container p{
+    color: white;
 }
