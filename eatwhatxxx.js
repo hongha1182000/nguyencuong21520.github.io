@@ -1,61 +1,21 @@
-var hoursContainer = document.querySelector('.hours');
-var minutesContainer = document.querySelector('.minutes');
-var secondsContainer = document.querySelector('.seconds');
-var tickElements = Array.from(document.querySelectorAll('.tick'));
-var last = new Date(0);
-last.setUTCHours(-1);
-var tickState = true;
 function updateTime() {
-  var now = new Date();
-  var lastHours = last.getHours().toString();
-  var nowHours = now.getHours().toString();
-  if (lastHours !== nowHours) {
-    updateContainer(hoursContainer, nowHours);
+  const date = new Date();
+  const h = date.getHours();
+  let m = date.getMinutes();
+  let s = date.getSeconds();
+  if(m<10)
+  {
+    m= "0"+m;
   }
-  var lastMinutes = last.getMinutes().toString();
-  var nowMinutes = now.getMinutes().toString();
-  if (lastMinutes !== nowMinutes) {
-    updateContainer(minutesContainer, nowMinutes);
+  if(s < 10) {
+    s = "0"+s;
   }
-  var lastSeconds = last.getSeconds().toString();
-  var nowSeconds = now.getSeconds().toString();
-  if (lastSeconds !== nowSeconds) {
-    //tick()
-    updateContainer(secondsContainer, nowSeconds);
-  }
-  last = now;
+  document.getElementById("banner-clock").innerHTML = h + ":" + m + ":" + s;
 }
-function tick() {
-  tickElements.forEach(function (t) {return t.classList.toggle('tick-hidden');});
-}
-function updateContainer(container, newTime) {
-  var time = newTime.split('');
-  if (time.length === 1) {
-    time.unshift('0');
-  }
-  var first = container.firstElementChild;
-  if (first.lastElementChild.textContent !== time[0]) {
-    updateNumber(first, time[0]);
-  }
-  var last = container.lastElementChild;
-  if (last.lastElementChild.textContent !== time[1]) {
-    updateNumber(last, time[1]);
-  }
-}
-function updateNumber(element, number) {
-  //element.lastElementChild.textContent = number
-  var second = element.lastElementChild.cloneNode(true);
-  second.textContent = number;
-  element.appendChild(second);
-  element.classList.add('move');
-  setTimeout(function () {
-    element.classList.remove('move');
-  }, 990);
-  setTimeout(function () {
-    element.removeChild(element.firstElementChild);
-  }, 990);
-}
-setInterval(updateTime, 100);
+updateTime();
+setInterval(function() {
+  updateTime();
+}, 1000)
 let breakfast = [{
   "img": "https://images.foody.vn/res/g9/82828/prof/s280x175/foody-mobile-bun1-jpg-482-635919939199928431.jpg",
   "name": "Bún Dọc Mùng",
