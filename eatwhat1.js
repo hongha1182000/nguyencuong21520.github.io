@@ -240,8 +240,10 @@ for (let i = 0; i < listProduct.length;i++) {
     listProduct.item(i).addEventListener("click" , function() {
         cart.push(breakfast[i]);
         localStorage.setItem("cart", JSON.stringify(cart))
-        alert("thêm thành công");
+        let cuongalo =JSON.parse(localStorage.getItem("cart"));
+        document.getElementById('menuTopDem').innerHTML=cuongalo.length;            
         console.log(cart)
     })      
 }
+
 

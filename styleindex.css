@@ -9,6 +9,7 @@ body {
   height: 50px;
   background-color: black;
   position: fixed;
+  z-index: 9;
 }
 
 .menu_top ul {
@@ -29,12 +30,22 @@ body {
 #account {
   list-style: none;
   float: right;
-  /* height: 50px; */
-  /* line-height: 50px; */
   color: white;
-  /* padding: 0px 20px 0px 20px; */
-  margin-right: 35px;
+  margin-right: 5px;
 
+}
+#menuTopCart{
+  padding: 0px;
+  float: right;
+  color: white;
+  font-size: 26px;
+}
+#menuTopDem{
+  list-style: none;
+  float: right;
+  color: white;
+  margin-right: 5px;
+  font-size: 26px;
 }
 .chen{
   height: 50px;

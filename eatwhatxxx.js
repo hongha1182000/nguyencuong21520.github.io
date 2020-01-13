@@ -1,6 +1,6 @@
 function updateTime() {
   const date = new Date();
-  const h = date.getHours();
+  let h = date.getHours();
   let m = date.getMinutes();
   let s = date.getSeconds();
   if (m < 10) {
@@ -8,6 +8,9 @@ function updateTime() {
   }
   if (s < 10) {
     s = "0" + s;
+  }
+  if (h < 10){
+    h = "0" + h;
   }
   document.getElementById("banner-clock").innerHTML = h + ":" + m + ":" + s;
 }
@@ -33,33 +36,8 @@ function getStar(score) {
   }
 
   return result;
-}
-// let test = document.getElementById('xxx')
-// test.innerHTML = "<div class='left'>\
-// <img\
-//   src='" + breakfast[m].img + "'>\
-// <blockquote>\
-//   <i>'Thân anh như ổ bánh mì<br>\
-//     Em mà đói bụng, nhâm nhi cầm chừng'</i>\
-// </blockquote>\
-// -Khuyết Danh-\
-// </div>\
-// <div class='right'>\
-// <div class='name-restaurant'>" + breakfast[m].name + "</div>\
-// <div class='address-restaurant'><i class='fas fa-map-marker-alt'></i>" + " " + breakfast[m].add + "</div>\
-// <div class='cost-restaurant'>" + breakfast[m].price + "</div>\
-// <div class='rate'>\
-//   <div class='star'>" + getStar(breakfast[m].star) +
-//   "</div>\
-//   Các Đánh Giá Từ Now\
-// </div>\
-// <a href='" + breakfast[m].link + "' class='order-restaurant'>\
-//   <p>Đặt Hàng</p>\
-//   <img src='https://www.now.vn/app/assets/img/nowvn.png?aa6bbddbf923c9dfd35ca83a7d068e6d'>\
-// </a>\
-// <div class='video'>\
-// <iframe width='560' height='315' src='https://www.youtube.com/embed/-QTNFALG3U0' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>\
-// </div>";
+};
+
 let cuongalo =JSON.parse(localStorage.getItem("cart"));
 console.log(cuongalo);
 let m = Math.floor(Math.random() * cuongalo.length);
@@ -89,4 +67,4 @@ test.innerHTML = "<div class='left'>\
 </a>\
 <div class='video'>\
 <iframe width='560' height='315' src='https://www.youtube.com/embed/-QTNFALG3U0' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>\
-</div>"
+</div>";

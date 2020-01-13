@@ -9,11 +9,6 @@ body {
     background-color: #FFC400;
 }
 
-.menu_top {
-    width: 100%;
-    height: 50px;
-    background-color: black;
-}
 
 .menu_top ul {
     margin: 0px;
@@ -37,18 +32,6 @@ body {
     color: white;
     font-size: 30px;
 }
-
-#account {
-    list-style: none;
-    float: right;
-    /* height: 50px; */
-    /* line-height: 50px; */
-    color: white;
-    /* padding: 0px 20px 0px 20px; */
-    margin-right: 35px;
-
-}
-
 #account i {
     font-size: 30px;
     margin-top: 10px;
@@ -158,7 +141,7 @@ body {
     margin: auto;
 }
 
-.left {
+.left1 {
     width: 40%;
     height: 80px;
     float: left;
@@ -175,7 +158,7 @@ body {
     margin: auto;
 }
 
-.mid {
+.mid1 {
     width: 10%;
     /* background-color: black; */
     height: 80px;
@@ -184,7 +167,7 @@ body {
 
 }
 
-.mid img {
+.mid1 img {
     width: 50px;
     height: 50px;
     line-height: 100px;
@@ -192,7 +175,7 @@ body {
     border-radius: 50%;
 }
 
-.right {
+.right1 {
     width: 40%;
     /* background-color: whitesmoke; */
     height: 80px;
@@ -201,12 +184,12 @@ body {
 
 }
 
-.right p {
+.right1 p {
     font-weight: 500;
     line-height: 10px;
 }
 
-.right a {
+.right1 a {
     border-radius: 50%;
     background-color: #363a45;
     width: 20px;
