@@ -4,97 +4,6 @@ body {
   margin: auto;
 }
 
-.menu_top {
-  width: 100%;
-  height: 50px;
-  background-color: black;
-  position: fixed;
-  z-index: 9;
-}
-
-.menu_top ul {
-  margin: 0px;
-  padding: 0px;
-}
-
-.menu_top li {
-  list-style: none;
-  float: left;
-  height: 50px;
-  line-height: 50px;
-  color: white;
-  padding: 0px 20px 0px 20px;
-
-}
-
-#account {
-  list-style: none;
-  float: right;
-  color: white;
-  margin-right: 5px;
-
-}
-#menuTopCart{
-  padding: 0px;
-  float: right;
-  color: white;
-  font-size: 26px;
-}
-#menuTopDem{
-  list-style: none;
-  float: right;
-  color: white;
-  margin-right: 5px;
-  font-size: 26px;
-  padding-left: 10px;
-}
-.chen{
-  height: 50px;
-}
-#account i {
-  font-size: 30px;
-  margin-top: 10px;
-}
-
-.baner {
-  width: 100%;
-  height: 500px;
-  background-image: url(https://scontent-hkg3-2.xx.fbcdn.net/v/t1.15752-9/s2048x2048/80673844_3058626950865033_8187647463767670784_n.jpg?_nc_cat=110&_nc_ohc=qOQQjoVma68AQlYoAxL46uHNapI91z-vD0j9Ja59nudsk-whGnuyHL3QA&_nc_ht=scontent-hkg3-2.xx&oh=4b8b2af4ead217af732eb80a280cf213&oe=5E76CC06);
-  /* background-image: url(https://scontent.fhan5-7.fna.fbcdn.net/v/t1.15752-9/81662667_603590483729323_2634298489986613248_n.png?_nc_cat=103&_nc_ohc=x-Z6nJU4DCsAQnjjX_ulN-ds-Gs7c-z1d4x9cvIUBZgG2xBqnh63wnsPQ&_nc_ht=scontent.fhan5-7.fna&oh=f8c6a8096bf5e1b1ae695749b8abe662&oe=5EA96B8F); */
-  /* background-image: url(./banner.png); */
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.bg-blur {
-  background-color: rgba(1, 1, 1, 0.3);
-}
-
-
-.clock{
-  font-family: sans-serif;
-  bottom:0px;
-
-  
-}
-.heading {
-  color:white;
-  font-size: 150px;
-}
-
-body {
-  height: 100%;
-  width: 100%;
-}
 /* 
 body {
     background: black;
@@ -133,7 +42,6 @@ body {
   line-height: 100px;
   background-color: #FFC400;
   font-family:'Lobster' ;
-  font-size: larger;
 }
 .end p{
   font-size: 50px;
@@ -209,6 +117,7 @@ body {
 .star{
   font-size: 14px;
   display: inline-block;
+  -webkit-text-stroke: 1px black;
 }
 .full{
   font-size: 14px;
@@ -224,5 +133,4 @@ body {
 {
   margin-left: 38px;
   margin-top: 37px;
-}
 }
