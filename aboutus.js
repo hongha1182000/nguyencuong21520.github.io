@@ -40,8 +40,8 @@ for (let x of aboutus) {
           <h4 class='card-title name'>" + x.name + "</h4>\
           <p class='card-text'>" + x.birth + "</p>\
           <div class='info'>\
-          <a href='" + x.fb + "' style='margin-right: 20px;'><i class='fab fa-facebook'></i></a>\
-          <a href='" + x.mess + "' style='margin-right: 20px;'><i class='fab fa-facebook-messenger'></i></a>\
+          <a href='" + x.fb + "'><i class='fab fa-facebook designMXH'></i></a>\
+          <a href='" + x.mess + "'><i class='fab fa-facebook-messenger'></i></a>\
           <a href='" + x.ins + "'><i class='fab fa-instagram' style='color: tomato;'></i></a>\
         </div>\
         </div>\
