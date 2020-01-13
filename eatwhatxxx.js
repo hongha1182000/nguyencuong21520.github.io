@@ -1,23 +1,4 @@
-function updateTime() {
-  const date = new Date();
-  let h = date.getHours();
-  let m = date.getMinutes();
-  let s = date.getSeconds();
-  if (m < 10) {
-    m = "0" + m;
-  }
-  if (s < 10) {
-    s = "0" + s;
-  }
-  if (h < 10){
-    h = "0" + h;
-  }
-  document.getElementById("banner-clock").innerHTML = h + ":" + m + ":" + s;
-}
-updateTime();
-setInterval(function () {
-  updateTime();
-}, 1000)
+
 function getStar(score) {
   const star = "<span class='full'><i class='fas fa-star'></i></span>"
   let result = ""
@@ -39,7 +20,6 @@ function getStar(score) {
 };
 
 let cuongalo =JSON.parse(localStorage.getItem("cart"));
-console.log(cuongalo);
 let m = Math.floor(Math.random() * cuongalo.length);
 console.log(m);
 let test = document.getElementById('xxx')
@@ -65,6 +45,7 @@ test.innerHTML = "<div class='left'>\
   <p>Đặt Hàng</p>\
   <img src='https://www.now.vn/app/assets/img/nowvn.png?aa6bbddbf923c9dfd35ca83a7d068e6d'>\
 </a>\
-<div class='video'>\
-<iframe width='560' height='315' src='https://www.youtube.com/embed/-QTNFALG3U0' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>\
+<div>\
+<a href='#' onclick='location.reload()'><button type='button' class='btn btn-danger ranDombutton'>Nếu Mày Không Thích Thì Bấm</button></a>\
+</div>\
 </div>";
