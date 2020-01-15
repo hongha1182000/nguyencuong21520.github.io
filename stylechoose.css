@@ -237,7 +237,9 @@ body {
 
 .right p {
     font-weight: 500;
-    line-height: 10px;
+    margin: 16px;
+    margin-left: 0px;
+
 }
 
 .right a {
