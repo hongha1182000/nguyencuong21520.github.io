@@ -3,6 +3,38 @@ body {
     width: 100%;
     margin: auto;
   }
+  .menu_top {
+    width: 100%;
+    height: 50px;
+    background-color: rgba(2, 3, 3, 0.84);
+    position: fixed;
+    z-index: 9;
+}
+
+.menu_top ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.menu_top li {
+    list-style: none;
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    color: white;
+    padding: 0px 20px 0px 20px;
+}
+#menuTopCart{
+  padding: 0px;
+  float: right;
+  color: white;
+  font-size: 26px;
+  margin-right: 20px;
+}
+.chen{
+  height: 50px;
+  background-color: gray;
+}
   
   /* 
   body {
