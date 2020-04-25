@@ -94,6 +94,9 @@ const view = {
                         controller.updateNewMessage(messageContent)
                     }
                 }
+
+                let out = document.querySelector('#bbb')
+                out.onclick = function(){firebase.auth().signOut()}
             }
         }
     },

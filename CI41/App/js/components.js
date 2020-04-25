@@ -71,6 +71,7 @@ const components ={
             
         </div>
         <form class="form-add-message-chat">
+        <button id="bbb">out</button>
             <div class="input-wrapper">
                 <input type="text" name="message" placeholder="Enter Your Message...">
             </div>
