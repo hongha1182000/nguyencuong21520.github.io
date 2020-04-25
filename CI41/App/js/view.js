@@ -83,6 +83,17 @@ const view = {
 
                 //display messages of current conversations // nội dung đầy đủ
                 view.showCurrentConversations()
+
+                //event form-add-message 
+                let formAddMessage = document.querySelector('.form-add-message-chat')
+                formAddMessage.onsubmit = function(event) {
+                    event.preventDefault()
+
+                    let messageContent = formAddMessage.message.value.trim()
+                    if(messageContent){
+                        controller.updateNewMessage(messageContent)
+                    }
+                }
             }
         }
     },
