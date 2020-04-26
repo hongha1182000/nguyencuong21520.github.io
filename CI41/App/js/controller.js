@@ -78,7 +78,7 @@
              let btnSubmitFormAddMessage = document.querySelector('#aaa')
              let inputFormAddMessage = document.querySelector('.form-add-message-chat input[name="message"]') 
              //query theo đặc điểm-> nút input nằm trong div .form-add.. với name = messs
-             
+
              await firebase.firestore()
                  .collection('conversations')
                  .doc(conversationId)
@@ -89,5 +89,30 @@
              view.enable('#aaa')
              inputFormAddMessage.value = ''
          }
+     },
+     setUpConversationchange: async function() {
+         let skipRun = true
+
+         firebase.firestore().collection('conversations').onSnapshot(function (snapshot){
+             if(skipRun){
+                 skipRun = false
+                 return
+             }
+
+             let docChanges = snapshot.docChanges()
+             for (let docChange of docChanges){
+                 let type = docChange.type
+                 let conversationDoc = docChange.doc
+                 let conversation = utils.getDataFromDoc(conversationDoc)
+
+                //  console.log('type ', type)
+                //  console.log('conversation', conversation)
+
+                 if(type == 'modified'){
+                    model.updateConversationChange(conversation)
+                    view.showCurrentConversations()                    
+                 }
+             }
+         })
      }
  }

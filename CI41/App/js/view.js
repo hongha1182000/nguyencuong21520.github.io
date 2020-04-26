@@ -80,7 +80,7 @@ const view = {
 
                 // load conversations form database => save conversations to model
                 await controller.loadConversations()
-
+                controller.setUpConversationchange()
                 //display messages of current conversations // nội dung đầy đủ
                 view.showCurrentConversations()
 
