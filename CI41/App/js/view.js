@@ -83,20 +83,51 @@ const view = {
                 controller.setUpConversationchange()
                 //display messages of current conversations // nội dung đầy đủ
                 view.showCurrentConversations()
-
+                view.showListConversation()
                 //event form-add-message 
                 let formAddMessage = document.querySelector('.form-add-message-chat')
-                formAddMessage.onsubmit = function(event) {
+                formAddMessage.onsubmit = function (event) {
                     event.preventDefault()
 
                     let messageContent = formAddMessage.message.value.trim()
-                    if(messageContent){
+                    if (messageContent) {
                         controller.updateNewMessage(messageContent)
                     }
                 }
-
+                
                 let out = document.querySelector('#bbb')
-                out.onclick = function(){firebase.auth().signOut()}
+                out.onclick = function () {
+                    firebase.auth().signOut()
+                }
+            }
+        }
+    },
+    showListConversation() {
+        if (model.listConversations) {
+            let listConversation = model.listConversations
+            let listContainer = document.querySelector('.list-conversation')
+
+            for (let conversation of listConversation) {
+                let title = conversation.title
+                let memberCount = conversation.users.length
+                // let members = null
+                // if (memberCount <= 1) {
+                //     members = `${memberCount} member`
+                // } else {
+                //     members = `${memberCount} members`
+                // }
+
+            // (condition) ? (value if true) : (value if false)
+                let members = (memberCount > 1) ? `${memberCount} members` : `${memberCount} member`
+
+
+                let html = `
+                <div class="conversation">
+                    <div class="conversation-title">${title}</div>
+                    <div class="conversation-members">${members}</div>
+                    </div>`
+
+                listContainer.innerHTML += html
             }
         }
     },
@@ -110,11 +141,12 @@ const view = {
             for (let message of messages) {
                 let owner = message.owner
 
-                let className = null
-                if(owner == currentEmail)
-                className = 'message-chat your'
-                else 
-                className = 'message-chat'
+                // let className = null
+                // if (owner == currentEmail)
+                //     className = 'message-chat your'
+                // else
+                //     className = 'message-chat'
+                let className = (owner == currentEmail) ? `message-chat your` : `message-chat`
 
                 let messageHtml = `
                <div class="${className}">

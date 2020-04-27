@@ -110,7 +110,8 @@
 
                  if(type == 'modified'){
                     model.updateConversationChange(conversation)
-                    view.showCurrentConversations()                    
+                    if(model.currentConversations && model.currentConversations.id == conversation.id){
+                    view.showCurrentConversations()}                    
                  }
              }
          })

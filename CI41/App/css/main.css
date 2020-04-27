@@ -1,54 +1,63 @@
-*{
-    margin: 0px;;
-    padding:0px;
+* {
+    margin: 0px;
+    ;
+    padding: 0px;
     font-size: 13px;
     box-sizing: border-box;
-    font-family: 'Open Sans' ;
+    font-family: 'Open Sans';
 }
-.sign-up-container{
+
+.sign-up-container {
     display: flex;
     justify-content: flex-end;
     height: 100vh;
     background: url(../img/register-background.jpg) center center no-repeat;
-    background-size:cover; 
+    background-size: cover;
 }
-.form-sign-up{
+
+.form-sign-up {
     min-width: 500px;
     background: white;
 
 }
-.form-sign-up h3,.form-sign-in h3{
+
+.form-sign-up h3,
+.form-sign-in h3 {
     margin: 50px 0px 50px 0px;
     font-size: 32px;
     text-align: center;
-    color:#7b8396;
+    color: #7b8396;
 }
 
-.input-wrapper input{
+.input-wrapper input {
     height: 38px;
     width: 100%;
     border: 1px solid #f2f2f2;
     border-radius: 5px;
     padding: 10px;
 }
-.name-wrapper{
+
+.name-wrapper {
     display: flex;
     justify-content: space-between;
 }
-.name-wrapper>.input-wrapper{
-    width:calc(50% - 5px)
+
+.name-wrapper>.input-wrapper {
+    width: calc(50% - 5px)
 }
 
-a:hover{
+a:hover {
     text-decoration: underline;
 }
-.form-footer{
+
+.form-footer {
     padding: 0px 50px;
     display: flex;
     justify-content: space-between;
 }
+
 .sign-in-container {
-    background:url(../img/login-background.jpg) center center no-repeat;
+    background: url(../img/login-background.jpg) center center no-repeat;
     background-size: cover;
     display: flex;
     justify-content: flex-end;
@@ -59,6 +68,7 @@ a:hover{
     background: white;
     min-width: 500px;
 }
+
 .input-wrapper input {
     height: 38px;
     width: 100%;
@@ -82,6 +92,13 @@ button {
     text-align: center;
 }
 
+.btn-icon {
+    height: 20px;
+    width: 20px;
+    padding: 0px;
+    background: none;
+}
+
 button:hover {
     cursor: pointer
 }
@@ -92,35 +109,45 @@ a {
     padding: 14px 0px;
 
 }
-.message-error{
+
+.message-error {
     color: red;
 }
-.message-success{
+
+.message-success {
     color: green;
 }
-button:disabled{
+
+button:disabled {
     background: #f2f2f2;
 }
+
 /* chat */
 
-.chat-container{
+.chat-container {
     width: 100%;
     height: 100vh;
+    display: flex;
 
 }
-.list-message-chat{
-    width:100%;
+
+.list-message-chat {
+    width: 100%;
     height: calc(100% - 38px);
     padding: 10px;
     overflow-y: auto;
 }
-.list-message-chat>.message-chat{
+
+.list-message-chat>.message-chat {
     margin-bottom: 10px;
 }
-.current-conversation{
+
+.current-conversation {
     height: 100vh;
+    width: 85%;
 }
-.message-chat>span{
+
+.message-chat>span {
     max-width: 50%;
     display: inline-block;
     padding: 10px;
@@ -129,17 +156,57 @@ button:disabled{
     color: #4482ff;
     word-break: break-word;
 }
-.message-chat.your{
+
+.message-chat.your {
 
     /* / viết liền = chỉ đúng class vừa có message vừa có class you */
     text-align: right;
 }
+
 .form-add-message-chat {
     display: flex;
     width: 100%;
     height: 38px;
-  }
-  .form-add-message-chat>.input-wrapper {
+}
+
+.form-add-message-chat>.input-wrapper {
     width: calc(100% - 120px);
     /* width: 100%; để như này nó cx chiếm hết phần còn lại */
-  }
+}
+
+/* aside left of chat*/
+.aside-left {
+    width: 15%;
+    background: seagreen;
+}
+
+.list-conversation>.conversation {
+    margin-bottom: 10px;
+}
+
+.list-conversation {
+    padding: 10px;
+    max-height: 60%;
+    overflow-y: auto;
+}
+
+.conversation-title {
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* font-size:15px */
+}
+
+.conversation-members {
+    font-size: 10px;
+    font-style: italic;
+}
+
+.form-add-conversation {
+    padding: 10px;
+}
+
+.form-add-conversation>* {
+    margin-bottom: 10px;
+}

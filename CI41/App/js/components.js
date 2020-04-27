@@ -2,7 +2,7 @@ const components ={
     signUp:`<section class="sign-up-container">
     <form class="form-sign-up">
         <div class="form-header">
-            <h3>MindX Chat</h3>
+            <h3>Chat</h3>
         </div>
         <div class="form-content">
             <div class="name-wrapper">
@@ -66,6 +66,21 @@ const components ={
 </section>`,
     chat:`    <section class="chat-container">
     <!-- aside-left -->
+    <div class="aside-left">
+            <div class="list-conversation">
+                
+            </div>
+            <form class="form-add-conversation">
+                <div class="input-wrapper">
+                    <input type="text" name="title" placeholder="New Conversation">
+                </div>
+                <div class="input-wrapper">
+                    <input type="email" name="friendEmail" placeholder="Your Friend Email">
+                </div>
+                <!-- <i class="fas fa-acorn"></i> -->
+                <button class="btn-icon" type="submit"><i class="fad fa-comments-alt"></i></i></button>
+            </form>
+        </div>
     <div class="current-conversation">
         <div class="list-message-chat">
             
