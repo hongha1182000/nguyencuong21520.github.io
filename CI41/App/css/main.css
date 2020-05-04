@@ -144,7 +144,7 @@ button:disabled {
 
 .current-conversation {
     height: 100vh;
-    width: 85%;
+    width: 70%;
 }
 
 .message-chat>span {
@@ -209,4 +209,28 @@ button:disabled {
 
 .form-add-conversation>* {
     margin-bottom: 10px;
+}
+/* aside-right */
+.details-current-conversation>*{
+    margin-bottom: 10px;
+}
+.details-current-conversation{
+    padding: 10px;
+}
+.conversation-email {
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.aside-right{
+    width: 15%;
+    background: gray;
+}
+.conversation-create-at{
+    font-size: 10px;
+    font-style: italic;
+}
+.btn-leave-conversation-wapper{
+    padding: 10px;
 }

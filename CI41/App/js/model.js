@@ -13,13 +13,14 @@ const model = {
         if(model.listConversations){
             //listConversation = [{id:1},{id:2},{id:3}]
             let foundIndex = model.listConversations.findIndex(function(conversation){
-                return conversation.id = newConversation.id
+                return conversation.id == newConversation.id
             })
-
+            // console.log('NewConversation' ,newConversation)
+            // console.log('FindIndex', foundIndex)
             if(foundIndex>=0){
                 model.listConversations[foundIndex] =  newConversation
             } else{
-                model.listConversations.push(newConversation)
+                model.listConversations.unshift(newConversation)
             }
 
             //currentConversation = {id:1}

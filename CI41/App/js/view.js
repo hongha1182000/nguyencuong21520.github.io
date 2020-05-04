@@ -82,8 +82,9 @@ const view = {
                 await controller.loadConversations()
                 controller.setUpConversationchange()
                 //display messages of current conversations // nội dung đầy đủ
-                view.showCurrentConversations()
                 view.showListConversation()
+                view.showCurrentConversations()
+
                 //event form-add-message 
                 let formAddMessage = document.querySelector('.form-add-message-chat')
                 formAddMessage.onsubmit = function (event) {
@@ -95,6 +96,17 @@ const view = {
                     }
                 }
                 
+                //event form-add-conversation
+                let formAddConversation = document.querySelector('.form-add-conversation') 
+                formAddConversation.onsubmit = function(event){
+                    event.preventDefault()
+
+                    let title = formAddConversation.title.value.trim()
+                    let friendEmail = formAddConversation.friendEmail.value.trim().toLowerCase()
+
+                    controller.addConversation(title, friendEmail)
+                    
+                }
                 let out = document.querySelector('#bbb')
                 out.onclick = function () {
                     firebase.auth().signOut()
@@ -104,10 +116,13 @@ const view = {
     },
     showListConversation() {
         if (model.listConversations) {
+            
             let listConversation = model.listConversations
             let listContainer = document.querySelector('.list-conversation')
 
+            listContainer.innerHTML = ''
             for (let conversation of listConversation) {
+                let conversationId = conversation.id
                 let title = conversation.title
                 let memberCount = conversation.users.length
                 // let members = null
@@ -122,13 +137,25 @@ const view = {
 
 
                 let html = `
-                <div class="conversation">
+                <div id="conversation-${conversationId}" class="conversation">
                     <div class="conversation-title">${title}</div>
                     <div class="conversation-members">${members}</div>
                     </div>`
 
                 listContainer.innerHTML += html
             }
+            // bind event to conversation tags
+            for(let conversation of listConversation){
+                let conversationId = conversation.id
+                let conversationDiv = document.querySelector(`#conversation-${conversationId}`)
+
+                // console.log(conversationDiv)
+                conversationDiv.onclick = function(){
+                    model.saveCurrentConversations(conversation)
+                    view.showCurrentConversations()
+                }
+            }
+
         }
     },
     showCurrentConversations() {

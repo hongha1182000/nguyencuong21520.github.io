@@ -73,9 +73,11 @@ const components ={
             <form class="form-add-conversation">
                 <div class="input-wrapper">
                     <input type="text" name="title" placeholder="New Conversation">
+                    <div id ="title-error" class="message-error"></div>
                 </div>
                 <div class="input-wrapper">
                     <input type="email" name="friendEmail" placeholder="Your Friend Email">
+                    <div id ="friend-email-error" class="message-error"></div>
                 </div>
                 <!-- <i class="fas fa-acorn"></i> -->
                 <button class="btn-icon" type="submit"><i class="fad fa-comments-alt"></i></i></button>
@@ -94,5 +96,17 @@ const components ={
         </form>
     </div>
     <!-- aside-right -->
+    <div class="aside-right">
+            <div class="details-current-conversation">
+                <div class="conversation-email">nguyencuong21520@gmail.com</div>
+                <div class="conversation-email">nguyenvancuong21520@gmail.com</div>
+                <div class="conversation-create-at">21/05/2000 19:00:00</div>
+            </div>
+            <div class='btn-leave-conversation-wapper'>
+                <button id="btn-leave-conversation" class="btn-icon">
+                    <i class="fas fa-minus"></i>
+                </button>
+            </div>
+        </div>
 </section>`
 }

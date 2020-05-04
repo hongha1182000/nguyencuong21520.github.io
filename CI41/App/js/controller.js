@@ -55,7 +55,8 @@
          let conversations = utils.getDataFromDocs(result.docs)
          model.saveListConversations(conversations)
          if (conversations.length) {
-             let currentConversation = conversations[0]
+             let currentConversation = conversations[conversations.length - 1]
+            //  let currentConversation = conversations[0]
              model.saveCurrentConversations(currentConversation)
          }
 
@@ -75,8 +76,8 @@
                  sentAt: new Date().toISOString()
              }
              view.disable('#aaa')
-             let btnSubmitFormAddMessage = document.querySelector('#aaa')
-             let inputFormAddMessage = document.querySelector('.form-add-message-chat input[name="message"]') 
+             //  let btnSubmitFormAddMessage = document.querySelector('#aaa')
+             let inputFormAddMessage = document.querySelector('.form-add-message-chat input[name="message"]')
              //query theo đặc điểm-> nút input nằm trong div .form-add.. với name = messs
 
              await firebase.firestore()
@@ -85,35 +86,79 @@
                  .update({
                      messages: firebase.firestore.FieldValue.arrayUnion(message)
                  })
-             console.log('done')
+             //  console.log('done')
              view.enable('#aaa')
              inputFormAddMessage.value = ''
          }
      },
-     setUpConversationchange: async function() {
+     setUpConversationchange: async function () {
          let skipRun = true
 
-         firebase.firestore().collection('conversations').onSnapshot(function (snapshot){
-             if(skipRun){
+         firebase.firestore().collection('conversations').onSnapshot(function (snapshot) {
+             if (skipRun) {
                  skipRun = false
                  return
              }
 
              let docChanges = snapshot.docChanges()
-             for (let docChange of docChanges){
+             for (let docChange of docChanges) {
                  let type = docChange.type
                  let conversationDoc = docChange.doc
                  let conversation = utils.getDataFromDoc(conversationDoc)
 
-                //  console.log('type ', type)
-                //  console.log('conversation', conversation)
+                //   console.log('type ', type)
+                //   console.log('conveartion truyen vao' , conversation)
+                 //  console.log('conversation', conversation)
 
-                 if(type == 'modified'){
-                    model.updateConversationChange(conversation)
-                    if(model.currentConversations && model.currentConversations.id == conversation.id){
-                    view.showCurrentConversations()}                    
+                 if (type == 'modified') {
+                     model.updateConversationChange(conversation)
+                     if (model.currentConversations && model.currentConversations.id == conversation.id) {
+                         view.showCurrentConversations()
+                     }
+                 }
+                 if(type == 'added'){
+                     model.updateConversationChange(conversation)
+                    //  controller.loadConversations()
+                     view.showListConversation()
                  }
              }
          })
+     },
+     addConversation: async function (title, friendEmail) {
+         // validate title & friendEmail
+        //  view.disable('')
+         let currentEmail = firebase.auth().currentUser.email
+         let now = new Date().toISOString()
+         let titleRequired = view.Validate(title, '#title-error', 'Missing Title')
+         let friendEmailRequired = view.Validate(friendEmail, '#friend-email-error', 'Missing Friend Email')
+
+         if (!titleRequired || !friendEmailRequired) {
+             return
+         }
+         let signInMethod = await firebase.auth().fetchSignInMethodsForEmail(friendEmail)
+         let friendEmailExists = view.Validate(signInMethod.length, '#friend-email-error', 'Email not exists in system!')
+         if (!friendEmailExists) {
+             return
+         }
+         let notCurrenrtEmail = view.Validate(friendEmail != currentEmail, "#friend-email-error", "Mày tự kỉ à?")
+         if (!notCurrenrtEmail) {
+             return
+         }
+
+         let conversation = {
+             title: title,
+             users: [currentEmail, friendEmail],
+             message: [],
+             createAt: now
+         }
+         await firebase.firestore()
+             .collection('conversations')
+             .add(conversation)
+            let inputTitle = document.querySelector('.form-add-conversation input[name="title"]')
+            let inputFriendEmail = document.querySelector('.form-add-conversation input[name="friendEmail"]')
+
+            inputTitle.value = ''
+            inputFriendEmail.value = ''
+
      }
  }
