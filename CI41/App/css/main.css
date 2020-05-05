@@ -57,7 +57,8 @@ a:hover {
 }
 
 .sign-in-container {
-    background: url(../img/login-background.jpg) center center no-repeat;
+    /* background: url(../img/login-background.jpg) center center no-repeat; */
+    background: url(https://scontent.fhan5-6.fna.fbcdn.net/v/t1.15752-9/96239600_587884725444794_4015107720913879040_n.jpg?_nc_cat=107&_nc_sid=b96e70&_nc_ohc=Dw7QEBFPfegAX_batSv&_nc_ht=scontent.fhan5-6.fna&oh=ebf7a9ae9c0d7c099479041a79def28a&oe=5ED92A8D) left center;
     background-size: cover;
     display: flex;
     justify-content: flex-end;
@@ -138,6 +139,8 @@ button:disabled {
     height: calc(100% - 38px);
     padding: 10px;
     overflow-y: auto;
+    background-image: url(https://scontent.fhan5-3.fna.fbcdn.net/v/t1.15752-9/96547462_270849414304425_2907651335648182272_n.jpg?_nc_cat=106&_nc_sid=b96e70&_nc_ohc=E-gsc2xNCzMAX-1ut2h&_nc_ht=scontent.fhan5-3.fna&oh=62bead23c125e8c9c37951f059737a44&oe=5ED807A0);
+    background-size: contain;
 }
 
 .list-message-chat>.message-chat {
@@ -157,6 +160,7 @@ button:disabled {
     border-radius: 5px;
     color: #4482ff;
     word-break: break-word;
+    background-color: aliceblue;
 }
 
 .message-chat.your {
@@ -229,7 +233,7 @@ button:disabled {
 }
 .aside-right{
     width: 15%;
-    background: gray;
+
 }
 .conversation-create-at{
     font-size: 10px;

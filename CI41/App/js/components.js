@@ -2,7 +2,7 @@ const components ={
     signUp:`<section class="sign-up-container">
     <form class="form-sign-up">
         <div class="form-header">
-            <h3>Chat</h3>
+            <h3>Em Iu Đăng Kí Tài Khoản Đi</h3>
         </div>
         <div class="form-content">
             <div class="name-wrapper">
@@ -42,7 +42,7 @@ const components ={
     signIn:`<section class="sign-in-container">
     <form class="form-sign-in">
         <div class="form-header">
-            <h3>MindX Chat</h3>
+            <h3>Hello Vợ Iu</h3>
         </div>
         <div class="form-content">
             <div class="input-wrapper">
