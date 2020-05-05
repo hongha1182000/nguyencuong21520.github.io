@@ -46,17 +46,18 @@
      },
      loadConversations: async function () {
          // console.log('model before load',model)
-
+        let currentEmail = firebase.auth().currentUser.email
          // read if from DB
 
          let result = await firebase.firestore()
              .collection('conversations')
+             .where('users', 'array-contains', currentEmail)
              .get()
          let conversations = utils.getDataFromDocs(result.docs)
          model.saveListConversations(conversations)
          if (conversations.length) {
-             let currentConversation = conversations[conversations.length - 1]
-            //  let currentConversation = conversations[0]
+            //  let currentConversation = conversations[conversations.length - 1]
+             let currentConversation = conversations[0]
              model.saveCurrentConversations(currentConversation)
          }
 
@@ -93,8 +94,11 @@
      },
      setUpConversationchange: async function () {
          let skipRun = true
-
-         firebase.firestore().collection('conversations').onSnapshot(function (snapshot) {
+         let currentEmail = firebase.auth().currentUser.email
+         firebase.firestore()
+         .collection('conversations')
+         .where('users', 'array-contains', currentEmail)
+         .onSnapshot(function (snapshot) {
              if (skipRun) {
                  skipRun = false
                  return
@@ -120,6 +124,11 @@
                      model.updateConversationChange(conversation)
                     //  controller.loadConversations()
                      view.showListConversation()
+                 }
+                 if(type == 'removed'){
+                    model.removeConversation(conversation)
+                    view.showListConversation()
+                    view.showCurrentConversations()
                  }
              }
          })
@@ -160,5 +169,20 @@
             inputTitle.value = ''
             inputFriendEmail.value = ''
 
+     },
+     leaveCurrentConversation: async function(){
+         if(model.currentConversations){
+            let currentConversationId = model.currentConversations.id
+            let currentEmail = firebase.auth().currentUser.email
+
+            await firebase.firestore()
+            .collection('conversations')
+            .doc(currentConversationId)
+            .update({
+                users: firebase.firestore.FieldValue.arrayRemove(currentEmail)
+            })
+
+
+         }
      }
  }

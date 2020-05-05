@@ -28,5 +28,21 @@ const model = {
                 model.saveCurrentConversations(newConversation)
             }
         }
+    },
+    removeConversation(conversation){
+        if(model.listConversations){
+            let conversationIndex = model.listConversations.findIndex(function(elem){
+                return elem.id == conversation.id
+            })
+             if(conversationIndex >=0 ){
+                 model.listConversations.splice(conversationIndex,1)
+             }
+             if(model.currentConversations && model.currentConversations.id == conversation.id){
+                 model.currentConversations = null
+                 if(model.listConversations.length){
+                     model.currentConversations = model.listConversations[0]
+                 }
+             }
+        }
     }
 }

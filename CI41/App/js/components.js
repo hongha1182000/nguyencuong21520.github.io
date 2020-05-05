@@ -32,7 +32,7 @@ const components ={
         </div>
         <div class="form-footer">
             <a id="form-sign-up-link" href="#">Already have an account? Login</a>
-            <button id="form-sign-up-btn" type="submit">Register</button>
+            <button id="form-sign-up-btn" class ="aaa" type="submit">Register</button>
             <!-- <button type="reset">aaaa</button> -->
         </div>
 
@@ -58,13 +58,17 @@ const components ={
         </div>
         <div class="form-footer">
                 <a id="form-sign-in-link" href="#">Not yet have a account? Register</a>
-                <button id="form-sign-in-btn" type="submit">Login</button>
+                <button id="form-sign-in-btn" class="aaa"type="submit">Login</button>
                 <!-- <button type="reset">aaaa</button> -->
         </div>
         
     </form>
 </section>`,
-    chat:`    <section class="chat-container">
+    chat:`<nav class="main-nav">
+    <div>nguyencuong21520@gmail.coom</div>
+    <button id="bbb" class ="btn-icon">Sigout</button>
+</nav>   
+     <section class="chat-container">
     <!-- aside-left -->
     <div class="aside-left">
             <div class="list-conversation">
@@ -80,7 +84,7 @@ const components ={
                     <div id ="friend-email-error" class="message-error"></div>
                 </div>
                 <!-- <i class="fas fa-acorn"></i> -->
-                <button class="btn-icon" type="submit"><i class="fad fa-comments-alt"></i></i></button>
+                <button class="btn-icon" type="submit">Add Conversation</button>
             </form>
         </div>
     <div class="current-conversation">
@@ -88,23 +92,20 @@ const components ={
             
         </div>
         <form class="form-add-message-chat">
-        <button id="bbb">out</button>
             <div class="input-wrapper">
                 <input type="text" name="message" placeholder="Enter Your Message...">
             </div>
-            <button id="aaa" type="submit">Send</button>
+            <button id="aaa" class="aaa" type="submit">Send</button>
         </form>
     </div>
     <!-- aside-right -->
     <div class="aside-right">
             <div class="details-current-conversation">
-                <div class="conversation-email">nguyencuong21520@gmail.com</div>
-                <div class="conversation-email">nguyenvancuong21520@gmail.com</div>
-                <div class="conversation-create-at">21/05/2000 19:00:00</div>
+                
             </div>
             <div class='btn-leave-conversation-wapper'>
                 <button id="btn-leave-conversation" class="btn-icon">
-                    <i class="fas fa-minus"></i>
+                    Leave
                 </button>
             </div>
         </div>
