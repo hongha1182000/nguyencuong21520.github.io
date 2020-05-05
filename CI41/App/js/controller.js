@@ -170,7 +170,7 @@
             inputFriendEmail.value = ''
 
      },
-     leaveCurrentConversation: async function(){
+   -  leaveCurrentConversation: async function(){
          if(model.currentConversations){
             let currentConversationId = model.currentConversations.id
             let currentEmail = firebase.auth().currentUser.email
