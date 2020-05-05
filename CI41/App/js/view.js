@@ -78,6 +78,10 @@ const view = {
             case 'chat': {
                 app.innerHTML = components.chat // Nội dung empty
 
+                let currentEmail = firebase.auth().currentUser.email
+                let currentEmailDisplay = document.querySelector('#nav')
+                currentEmailDisplay.innerHTML =`<div>${currentEmail}</div>
+                <button id="bbb" class ="btn-icon">Sigout</button>`
                 // load conversations form database => save conversations to model
                 await controller.loadConversations()
                 controller.setUpConversationchange()
