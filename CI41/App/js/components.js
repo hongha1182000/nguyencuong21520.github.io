@@ -64,9 +64,9 @@ const components ={
         
     </form>
 </section>`,
-    chat:`<nav class="main-nav" id = "nav">
-    
-    
+    chat:`<nav class="main-nav">
+    <div>nguyencuong21520@gmail.coom</div>
+    <button id="bbb" class ="btn-icon">Sigout</button>
 </nav>   
      <section class="chat-container">
     <!-- aside-left -->
