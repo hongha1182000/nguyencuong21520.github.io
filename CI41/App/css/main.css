@@ -158,15 +158,19 @@ button:disabled {
     padding: 10px;
     border: 1px solid #4482ff;
     border-radius: 5px;
-    color: #4482ff;
+    color: white;
     word-break: break-word;
-    background-color: aliceblue;
+    background-color:#4482ff;
 }
 
 .message-chat.your {
 
     /* / viết liền = chỉ đúng class vừa có message vừa có class you */
     text-align: right;
+}
+.message-chat.your>span{
+    color: #4482ff;
+    background-color: white;
 }
 
 .form-add-message-chat {
