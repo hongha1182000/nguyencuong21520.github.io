@@ -12,34 +12,35 @@
 </head>
 
 <body>
-    <div class="app">
-        <section class="form-sign-in-container">
-            <div class="form-sign-in">
-                <h1>Đăng Nhập</h1>
-                <div class="txtb">
-                    <input type="email" placeholder="Email">
-                    <span></span>
-                </div>
-                <div class="txtb">
-                    <input type="password" placeholder="Mật khẩu">
-                    <span></span>
-                </div>
-                <button id="btn-sign-in" class="logbtn">Đăng nhập</button>
-                <!-- <input type="submit" class="logbtn" value="Login"> -->
-                <div class="bottom-in">
-                    Bạn chưa có tài khoản?<a href="#"> Đăng kí</a>
-                </div>
-                <div class="social-media">
-                    <ul>
-                        <li><img src="img/FbIcon.png"></li>
-                        <li><img src="img/googleIcon.png"></li>
-                        <li><img src="img/phoneIcon.png"></li>
-                        <li><img src="img/githubIcon.png"></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+    <div id="app" class="app">
+        
     </div>
+
+    <script src="./js/components.js"></script>
+    <script src="./js/controller.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/view.js"></script>
+    <script src="js/utils.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
+
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyA3NW6ESM0eUQqPJY5nlgngGB7EWOC3ulQ",
+            authDomain: "findwhat-22783.firebaseapp.com",
+            databaseURL: "https://findwhat-22783.firebaseio.com",
+            projectId: "findwhat-22783",
+            storageBucket: "findwhat-22783.appspot.com",
+            messagingSenderId: "232382263700",
+            appId: "1:232382263700:web:13e4dbbc316f4694195f81",
+            measurementId: "G-1R23YBPPRT"
+        };
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
 </body>
 
 </html>
