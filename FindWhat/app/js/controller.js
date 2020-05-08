@@ -32,7 +32,7 @@ const controller = {
             let result = await firebase.auth().signInWithEmailAndPassword(email,password)
             let user = result.user
             if(user.emailVerified){
-                open("./home.html")
+                window.open("./home.html","_self")
             } else{
                 throw new Error('Must verify email')
             }
