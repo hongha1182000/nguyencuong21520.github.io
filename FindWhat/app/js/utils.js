@@ -20,4 +20,7 @@ const utils ={
         }
         return true
     },
+    setLoadingContent(query,html){
+        document.querySelector(query).innerHTML = html
+    }
 }

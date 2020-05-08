@@ -3,15 +3,16 @@ const components ={
     <form class="form-sign-in">
         <h1>Đăng Nhập</h1>
         <div class="txtb">
-            <input type="email" placeholder="Email">
+            <input type="email" name="email" placeholder="Email">
             <span></span>
+            <div class="alert-error" id="email-error"></div>
         </div>
         <div class="txtb">
-            <input type="password" placeholder="Mật khẩu">
+            <input type="password" name = "password" placeholder="Mật khẩu">
             <span></span>
+            <div class="alert-error" id="passWord-error"></div>
         </div>
-        <button id="btn-sign-in" type="submit" class="logbtn">Đăng nhập</button>
-        <!-- <input type="submit" class="logbtn" value="Login"> -->
+        <button id="btn-sign-in"  class="logbtn" type="submit">Đăng nhập</button>
         <div class="bottom-in">
             Bạn chưa có tài khoản?<a id= "aSignIn"href="#"> Đăng kí</a>
         </div>
@@ -48,11 +49,12 @@ const components ={
         <div class="txtbup">
             <input type="password" name="confirmPassword" placeholder="Xác nhận mật khẩu">
             <div class="alert-error" id="confirmPassWord-error"></div>
+            <div class="alert-success" id="sign-up-success"></div>
             <span></span>
             
         </div>
         </div>
-        <button id="btn-sign-up" class="logbtn" type="submit" >Đăng Ký</button>
+        <button id="btn-sign-up" class="logbtn" type="submit" ></button>
         <div class="bottom-up">
             Bạn đã có tài khoản?<a id="aSignUp" href="#"> Đăng Nhập</a>
         </div>
