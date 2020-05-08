@@ -28,7 +28,7 @@ const components ={
 </section>`,
     signUp:`<section class="form-sign-up-container">
     <form class="form-sign-up">
-        <h1>Đăng Ký</h1>
+        <h1>Đăng Kí</h1>
         <div id ="form-input-signup-wrapper">
         <div class="txtbup">
             <input type="text" name="fullName" placeholder="Họ tên">
