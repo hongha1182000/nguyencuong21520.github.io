@@ -53,6 +53,7 @@ const controller = {
           }).catch(function(error) {
               console.log('error nek', error)
           });
+          
     }
     
 }
