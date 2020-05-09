@@ -78,6 +78,12 @@ const view ={
                     }
 
                 }
+
+                let googleSignUp = document.querySelector('#googlenek')
+                console.log('google',googleSignUp)
+                googleSignUp.onclick = function(){
+                    controller.googleSignUp()
+                }
                 break
             }
         }

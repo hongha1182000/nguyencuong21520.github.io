@@ -139,10 +139,9 @@
     position: relative;
 }
 .social-media img:hover{
-    width: 40px;
-    height: 40px;
+    top: -7px;
     position: relative;
-    transition: .3s;
+    transition: 1s;
 }
 .social-media-up{
     margin-top: 33px !important;

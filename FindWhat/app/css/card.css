@@ -1,0 +1,30 @@
+*{
+    box-sizing: border-box ;
+}
+.img-cuong{
+    height: 150px;
+}
+/* .card{
+    position: relative;
+} */
+.card-body{
+padding: 0rem 1rem 1rem 1rem;
+} 
+.left-incrad-wrapper{
+    float: left;
+}
+.right-incrad-wrapper{
+    float: right;
+}
+.left-incard-content-wrapper{
+    margin-left: 22px;
+}
+.left-incard-content-wrapper p{
+    font-size: 25px;
+}
+.right-incrad-wrapper button{
+    width: 150px;
+}
+.type-name-incard{
+    color: red;
+}

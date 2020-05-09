@@ -42,6 +42,17 @@ const controller = {
             utils.setText('#passWord-error',message)
         }
         utils.setLoadingContent('#btn-sign-in',`Đăng Nhập`)
+    },
+    googleSignUp: function(){
+        console.log('alo')
+        let provider = new firebase.auth.GoogleAuthProvider()
+        console.log('hihi',provider)
+
+        firebase.auth().signInWithPopup(provider).then(function(result) {
+            console.log('success')
+          }).catch(function(error) {
+              console.log('error nek', error)
+          });
     }
     
 }

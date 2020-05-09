@@ -18,10 +18,10 @@ const components ={
         </div>
         <div class="social-media">
             <ul>
-                <li><img src="img/FbIcon.png"></li>
-                <li><img src="img/googleIcon.png"></li>
-                <li><img src="img/phoneIcon.png"></li>
-                <li><img src="img/githubIcon.png"></li>
+                <li id="fbnek"><img src="img/FbIcon.png"></li>
+                <li id="googlenek"><img src="img/googleIcon.png"></li>
+                <li id="phonenek"><img src="img/phoneIcon.png"></li>
+                <li id="githubnek"><img src="img/githubIcon.png"></li>
             </ul>
         </div>
     </form>
@@ -60,10 +60,10 @@ const components ={
         </div>
         <div class="social-media social-media-up">
             <ul>
-                <li><img src="img/FbIcon.png"></li>
-                <li><img src="img/googleIcon.png"></li>
-                <li><img src="img/phoneIcon.png"></li>
-                <li><img src="img/githubIcon.png"></li>
+            <li id="fbnek"><img src="img/FbIcon.png"></li>
+            <li id="googlenek"><img src="img/googleIcon.png"></li>
+            <li id="phonenek"><img src="img/phoneIcon.png"></li>
+            <li id="githubnek"><img src="img/githubIcon.png"></li>
             </ul>
         </div>
     </form>
