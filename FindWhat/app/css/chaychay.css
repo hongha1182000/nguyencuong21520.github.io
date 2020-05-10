@@ -1,11 +1,9 @@
-*{
-  box-sizing: border-box;
-}
+
 .carousel-inner img {
   width: 100%;
 
 }
-#demo{
+#demo2{
   display: flex;
   justify-content: center;
   align-items: center;
