@@ -51,7 +51,7 @@ const controller = {
         firebase.auth().signInWithPopup(provider).then(function(result) {
             console.log('success')
           }).catch(function(error) {
-              console.log('error nek', error)
+              console.log(error.message)
           });
           
     }
