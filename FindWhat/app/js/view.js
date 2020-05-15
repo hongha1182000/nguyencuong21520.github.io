@@ -80,11 +80,31 @@ const view ={
                 }
 
                 let googleSignUp = document.querySelector('#googlenek')
-                console.log('google',googleSignUp)
                 googleSignUp.onclick = function(){
                     controller.googleSignUp()
                 }
                 break
+            }
+            case 'home':{
+                app.innerHTML = components.home
+                controller.showNameUser()
+
+                let checkSignined = firebase.auth().onAuthStateChanged(function (user) {
+                    if (user && user.emailVerified)
+                        return true;
+                    else
+                        return false;
+                })
+                console.log('aa',checkSignined)
+
+                let out = document.querySelector('#dangKyChange')
+                out.onclick = function () {
+                    if(checkSignined){
+                    firebase.auth().signOut()}
+                    else{
+                        view.showScreen('signUp')
+                    }
+                }
             }
         }
     }

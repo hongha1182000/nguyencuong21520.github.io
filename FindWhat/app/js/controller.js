@@ -32,7 +32,8 @@ const controller = {
             let result = await firebase.auth().signInWithEmailAndPassword(email,password)
             let user = result.user
             if(user.emailVerified){
-                window.open("./home.html","_self")
+                // window.open("./home.html","_self")
+                view.showScreen('home')
             } else{
                 throw new Error('Must verify email')
             }
@@ -54,6 +55,14 @@ const controller = {
               console.log(error.message)
           });
           
-    }
-    
+    },
+    showNameUser: function(){
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user && user.emailVerified)
+            {   let user = firebase.auth().currentUser.displayName
+                utils.setText('#dangNhapChange',user)
+                utils.setLoadingContent('#dangKyChange',`<i class="fas fa-sign-out-alt"></i>`)
+            }    
+        })   
+    }  
 }
