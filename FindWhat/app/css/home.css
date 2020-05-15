@@ -7,7 +7,11 @@
     }
    
 }
+.container-fluid a{
+  text-decoration: none;
+}
 .navbar{
+
     background-image: linear-gradient(120deg,#3498db,#8e44ad);
 }
 .form-control{
@@ -66,7 +70,10 @@
 	.carousel-caption .btn {		
 		font-size: 90%;
 		padding: 4px 8px;
-	}	
+  }
+  .navbar-branch{
+    margin-right: 0px !important;
+  }	
 }
 .thong-tin-noi-bat h2{
     font-size: 38px;
@@ -171,7 +178,8 @@
     .content-nek{
       word-break: break-word;
       text-align: center;
-      text-indent: -99999px;
+      text-indent: -99999px !important;
+      visibility: hidden;
     }
     .btn-primary{
       font-size: 10px;
@@ -199,5 +207,31 @@
       height: 15px;
     }
   }
-  
+  .social-media{
+    width: 100%;
+    text-align: center;
+    margin-top: 45px;
+}
+.social-media ul{
+    list-style: none;
+    padding-left: 0px;
+}
+.social-media ul li{
+    display: inline-block;
+    cursor: pointer;
+    padding: 0px 15px;
+}
+.social-media img{
+    height: 35px;
+    width: 35px;
+    position: relative;
+}
+.social-media img:hover{
+    top: -7px;
+    position: relative;
+    transition: 1s;
+}
+.social-media-up{
+    margin-top: 33px !important;
+}
   

@@ -168,6 +168,7 @@ button:disabled {
     /* / viết liền = chỉ đúng class vừa có message vừa có class you */
     text-align: right;
 }
+
 .message-chat.your>span{
     color: #4482ff;
     background-color: white;

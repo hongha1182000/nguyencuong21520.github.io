@@ -45,6 +45,6 @@ thongTin.innerHTML += "<div class='col-md-3 col-sm-6 aloo'>\
       <a href='" + x.ins + "'><i class='fab fa-instagram' style='color: tomato;'></i></a>\
     </div>\
     </div>\
-    </div>\
+</div>\
   </div>";
 }
